@@ -38,7 +38,7 @@ def get_llm():
     if not api_key:
         raise HTTPException(500, "GOOGLE_API_KEY not set on server.")
     return ChatGoogleGenerativeAI(
-        model="models/gemini-2.0-flash",
+        model="gemini-1.5-flash",
         temperature=0.4,
         google_api_key=api_key,
     )
@@ -296,3 +296,4 @@ def delete_candidate(session_id: str):
     db = [e for e in db if e.get("session_id") != session_id]
     save_db(db)
     return {"ok": True}
+
