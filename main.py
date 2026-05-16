@@ -38,7 +38,7 @@ def get_llm():
     if not api_key:
         raise HTTPException(500, "GOOGLE_API_KEY not set on server.")
     return ChatGoogleGenerativeAI(
-        model="gemini-2.0-flash",
+        model="gemini-2.5-flash",
         temperature=0.4,
         google_api_key=api_key,
     )
